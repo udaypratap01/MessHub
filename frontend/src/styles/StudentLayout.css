@@ -1,0 +1,189 @@
+/* ================================================
+   STUDENT LAYOUT - RESPONSIVE DESIGN
+   ================================================ */
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================================================
+   LAYOUT CONTAINER
+   ================================================ */
+
+.student-layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #1a1637 50%, #2d1b4e 100%);
+  background-attachment: fixed;
+}
+
+/* ================================================
+   MAIN CONTENT AREA
+   ================================================ */
+
+.layout-main {
+  flex: 1;
+  margin-left: 280px;
+  background: linear-gradient(180deg, transparent 0%, rgba(102, 126, 234, 0.05) 100%);
+  overflow-y: auto;
+  animation: slideInRight 0.5s ease-out;
+}
+
+.layout-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.layout-main::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.layout-main::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 4px;
+}
+
+.layout-main::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.5);
+}
+
+/* ================================================
+   LAYOUT CONTENT
+   ================================================ */
+
+.layout-content {
+  padding: 40px 30px;
+  animation: fadeIn 0.6s ease-out 0.2s both;
+  min-height: 100%;
+}
+
+/* ================================================
+   DESKTOP LAYOUT (769px+)
+   ================================================ */
+
+@media (min-width: 769px) {
+  .layout-main {
+    margin-left: 280px;
+  }
+
+  .layout-content {
+    padding: 40px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* ================================================
+   TABLET LAYOUT (481px - 768px)
+   ================================================ */
+
+@media (max-width: 768px) {
+  .student-layout {
+    flex-direction: column;
+  }
+
+  .layout-main {
+    margin-left: 0;
+    padding-top: 70px; /* Space for fixed mobile menu button */
+    margin-top: 0;
+  }
+
+  .layout-content {
+    padding: 60px 20px 40px;
+  }
+
+  /* Adjust for mobile menu toggle button */
+  .layout-main {
+    padding-top: 80px;
+  }
+}
+
+/* ================================================
+   MOBILE LAYOUT (320px - 480px)
+   ================================================ */
+
+@media (max-width: 480px) {
+  .student-layout {
+    flex-direction: column;
+    background: linear-gradient(135deg, #0f0c29 0%, #1a1637 100%);
+  }
+
+  .layout-main {
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .layout-content {
+    padding: 80px 16px 30px;
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  /* Ensure content is readable on small screens */
+  .layout-content {
+    font-size: 16px;
+  }
+}
+
+/* ================================================
+   PAGE ANIMATIONS
+   ================================================ */
+
+.student-layout > * {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ================================================
+   RESPONSIVE TEXT
+   ================================================ */
+
+@media (max-width: 480px) {
+  .layout-content h1 {
+    font-size: 24px;
+  }
+
+  .layout-content h2 {
+    font-size: 20px;
+  }
+
+  .layout-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* ================================================
+   ACCESSIBILITY
+   ================================================ */
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .layout-main,
+  .layout-content {
+    animation: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  .layout-main {
+    border-left: 2px solid rgba(102, 126, 234, 0.5);
+  }
+}

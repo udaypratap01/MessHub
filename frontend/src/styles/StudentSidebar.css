@@ -1,0 +1,538 @@
+/* ================================================
+   MODERN STUDENT SIDEBAR - ANIMATIONS & RESPONSIVE
+   ================================================ */
+
+/* ---- Animations ---- */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ================================================
+   MOBILE MENU TOGGLE BUTTON
+   ================================================ */
+
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mobile-menu-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ================================================
+   SIDEBAR OVERLAY (Mobile)
+   ================================================ */
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ================================================
+   SIDEBAR CONTAINER
+   ================================================ */
+
+.student-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  background: linear-gradient(180deg, rgba(30, 30, 50, 0.95) 0%, rgba(20, 20, 40, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  animation: slideInLeft 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================================
+   SIDEBAR HEADER
+   ================================================ */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 0.5s ease-out;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.logo-icon {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-close-mobile {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 28px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-close-mobile:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* ================================================
+   ROLE SECTION
+   ================================================ */
+
+.sidebar-role-section {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  animation: fadeIn 0.6s ease-out 0.1s both;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.role-badge.student {
+  background: rgba(147, 112, 219, 0.2);
+  color: #c4a1ff;
+  border: 1px solid rgba(147, 112, 219, 0.4);
+}
+
+.role-badge.admin {
+  background: rgba(220, 38, 38, 0.2);
+  color: #ff9999;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.user-name {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ================================================
+   SIDEBAR MENU
+   ================================================ */
+
+.sidebar-menu {
+  flex: 1;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ================================================
+   MENU ITEMS
+   ================================================ */
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  animation: slideInRight 0.5s ease-out both;
+}
+
+.menu-item:hover {
+  background: rgba(102, 126, 234, 0.15);
+  color: white;
+  transform: translateX(4px);
+}
+
+.menu-item.active {
+  background: rgba(102, 126, 234, 0.25);
+  color: #a8d5ff;
+}
+
+.menu-item.active .menu-icon {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.menu-icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-label {
+  flex: 1;
+  text-align: left;
+}
+
+.active-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  border-radius: 0 2px 2px 0;
+  animation: slideInRight 0.4s ease-out;
+}
+
+/* ================================================
+   SIDEBAR FOOTER
+   ================================================ */
+
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.7s ease-out 0.2s both;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.footer-item:hover {
+  transform: translateX(4px);
+}
+
+.settings-btn:hover {
+  background: rgba(102, 126, 234, 0.15);
+  color: #a8d5ff;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 38, 38, 0.15);
+  color: #ff9999;
+}
+
+/* ================================================
+   DESKTOP LAYOUT (768px+)
+   ================================================ */
+
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .sidebar-overlay {
+    display: none;
+  }
+
+  .student-sidebar {
+    animation: slideInLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .sidebar-close-mobile {
+    display: none;
+  }
+
+  /* Main content has margin for sidebar */
+  body {
+    margin-left: 0;
+  }
+}
+
+/* ================================================
+   TABLET LAYOUT (481px - 768px)
+   ================================================ */
+
+@media (max-width: 768px) {
+  .student-sidebar {
+    width: 260px;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .student-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .sidebar-close-mobile {
+    display: block;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .menu-item,
+  .footer-item {
+    font-size: 13px;
+  }
+
+  .menu-icon {
+    font-size: 16px;
+  }
+}
+
+/* ================================================
+   MOBILE LAYOUT (320px - 480px)
+   ================================================ */
+
+@media (max-width: 480px) {
+  .student-sidebar {
+    width: 100%;
+    max-width: 280px;
+    animation: slideInLeft 0.4s ease-out;
+  }
+
+  .sidebar-header {
+    padding: 20px 16px;
+  }
+
+  .logo-icon {
+    font-size: 28px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .sidebar-menu {
+    padding: 8px 6px;
+  }
+
+  .menu-item,
+  .footer-item {
+    padding: 10px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .menu-icon {
+    font-size: 16px;
+  }
+
+  .menu-label {
+    font-size: 12px;
+  }
+
+  .mobile-menu-toggle {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .sidebar-role-section {
+    padding: 12px 16px;
+  }
+
+  .role-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+}
+
+/* ================================================
+   ACCESSIBILITY
+   ================================================ */
+
+.menu-item:focus-visible,
+.footer-item:focus-visible,
+.mobile-menu-toggle:focus-visible {
+  outline: 2px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode - already applied */
+@media (prefers-color-scheme: dark) {
+  .student-sidebar {
+    background: linear-gradient(180deg, rgba(30, 30, 50, 0.95) 0%, rgba(20, 20, 40, 0.95) 100%);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  .menu-item.active {
+    border: 2px solid #667eea;
+  }
+
+  .active-indicator {
+    width: 6px;
+  }
+}

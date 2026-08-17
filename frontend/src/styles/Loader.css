@@ -1,0 +1,260 @@
+/* ==========================================
+   LOADER.CSS - Modern Loading Animations
+   ========================================== */
+
+:root {
+  --primary: #6366f1;
+  --secondary: #3b82f6;
+  --bg-dark: #0f172a;
+}
+
+/* ========== LOADER ANIMATIONS ========== */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes dot-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-15px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeInLoader {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========== LOADER WRAPPER ========== */
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInLoader 0.4s ease-out;
+}
+
+.loader-wrapper.full-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(26, 31, 71, 0.9) 100%);
+  backdrop-filter: blur(10px);
+}
+
+.loader-wrapper.inline {
+  min-height: 200px;
+  padding: 40px 20px;
+}
+
+/* Size variants */
+.loader-wrapper.small .loader-container {
+  gap: 12px;
+}
+
+.loader-wrapper.medium .loader-container {
+  gap: 16px;
+}
+
+.loader-wrapper.large .loader-container {
+  gap: 20px;
+}
+
+/* ========== LOADER CONTAINER ========== */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ========== SPINNER ========== */
+.spinner-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: spin 3s linear infinite;
+}
+
+.spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.spinner-ring:nth-child(1) {
+  border-top-color: var(--primary);
+  border-right-color: var(--primary);
+  animation: spin 1.5s linear infinite;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.spinner-ring:nth-child(2) {
+  border-top-color: var(--secondary);
+  border-bottom-color: var(--secondary);
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  animation: spinReverse 2s linear infinite;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.spinner-ring:nth-child(3) {
+  border-left-color: #8b5cf6;
+  border-bottom-color: #8b5cf6;
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  animation: spin 2.5s linear infinite;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+.loader-logo {
+  position: absolute;
+  font-size: 40px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Size variants */
+.loader-wrapper.small .spinner-wrapper {
+  width: 60px;
+  height: 60px;
+}
+
+.loader-wrapper.small .loader-logo {
+  font-size: 28px;
+}
+
+.loader-wrapper.large .spinner-wrapper {
+  width: 120px;
+  height: 120px;
+}
+
+.loader-wrapper.large .loader-logo {
+  font-size: 52px;
+}
+
+/* ========== LOADER TEXT ========== */
+.loader-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  animation: fadeInLoader 0.6s ease-out 0.2s backwards;
+}
+
+.loader-wrapper.small .loader-text {
+  font-size: 13px;
+}
+
+.loader-wrapper.large .loader-text {
+  font-size: 18px;
+}
+
+/* ========== LOADER DOTS ========== */
+.loader-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.loader-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  animation: dot-bounce 1.4s infinite;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+.loader-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.loader-wrapper.small .loader-dots span {
+  width: 6px;
+  height: 6px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .loader-wrapper.full-page {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(26, 31, 71, 0.95) 100%);
+  }
+
+  .spinner-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+
+
+  .loader-logo {
+    font-size: 32px;
+  }
+
+  .loader-text {
+    font-size: 14px;
+  }
+}

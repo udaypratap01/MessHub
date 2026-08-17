@@ -1,0 +1,371 @@
+/* ===========================
+   TABLE STYLES - DARK THEME
+   =========================== */
+
+.table-container {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table-container:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Table Header ===== */
+.table-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+}
+
+.table-header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.table-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.table-header-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.table-header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+}
+
+/* ===== Table Content ===== */
+.table-content {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.12));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+th:last-child {
+  border-right: none;
+  text-align: right;
+}
+
+td {
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #e0e0ff;
+  font-size: 14px;
+}
+
+tbody tr {
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+tbody tr:hover {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), transparent);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== Table Cell Types ===== */
+.table-cell-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.table-cell-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.table-cell-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.table-cell-status.completed,
+.table-cell-status.active,
+.table-cell-status.approved {
+  background: rgba(76, 175, 80, 0.2);
+  color: #90ee90;
+}
+
+.table-cell-status.pending,
+.table-cell-status.warning {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffcc99;
+}
+
+.table-cell-status.rejected,
+.table-cell-status.failed,
+.table-cell-status.cancelled {
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff9999;
+}
+
+.table-cell-status.pending-review {
+  background: rgba(102, 126, 234, 0.2);
+  color: #b3d9ff;
+}
+
+/* ===== Table Actions ===== */
+.table-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.table-action-btn {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #b3d9ff;
+  transition: all 0.3s ease;
+}
+
+.table-action-btn:hover {
+  background: rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+  color: #ffffff;
+}
+
+.table-action-btn.delete {
+  color: #ff9999;
+}
+
+.table-action-btn.delete:hover {
+  background: rgba(255, 107, 107, 0.15);
+  border-color: #ff6b6b;
+  color: #ffcccc;
+}
+
+.table-action-btn.success {
+  color: #90ee90;
+}
+
+.table-action-btn.success:hover {
+  background: rgba(76, 175, 80, 0.15);
+  border-color: #4caf50;
+  color: #ffffff;
+}
+
+/* ===== Table Empty State ===== */
+.table-empty {
+  padding: 60px 24px;
+  text-align: center;
+  color: #cfcfff;
+}
+
+.table-empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.table-empty-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.table-empty-text {
+  font-size: 14px;
+  color: #cfcfff;
+  margin: 0;
+}
+
+/* ===== Table Pagination ===== */
+.table-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+}
+
+.table-pagination-info {
+  font-size: 13px;
+  color: #cfcfff;
+  font-weight: 600;
+}
+
+.table-pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.table-pagination-btn {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #b3d9ff;
+  transition: all 0.3s ease;
+}
+
+.table-pagination-btn:hover:not(:disabled) {
+  background: rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+  color: #ffffff;
+}
+
+.table-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .table-container {
+    border-radius: 12px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .table-header-actions {
+    width: 100%;
+  }
+
+  .table-header-btn {
+    flex: 1;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 12px 16px;
+  }
+
+  .table-cell-user {
+    gap: 8px;
+  }
+
+  .table-cell-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .table-cell-status {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .table-pagination {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .table-pagination-info {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-content {
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .table-header-title {
+    font-size: 16px;
+  }
+
+  .table-empty {
+    padding: 40px 16px;
+  }
+
+  .table-empty-icon {
+    font-size: 36px;
+  }
+
+  .table-action-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .table-actions {
+    gap: 4px;
+  }
+}

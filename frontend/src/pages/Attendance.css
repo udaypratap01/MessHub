@@ -1,0 +1,156 @@
+/* ====================================================
+   ATTENDANCE - FINAL DARK UI (100% TEXT VISIBLE)
+   ==================================================== */
+
+.attendance-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  color: #ffffff;
+}
+
+/* Titles */
+.attendance-title {
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.attendance-subtitle {
+  color: #cfcfff;
+}
+
+/* Cards */
+.today-status {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.status-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.status-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Buttons */
+.mark-button {
+  background: linear-gradient(135deg, #6a5af9, #8f94fb);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* =========================
+   🔥 TABLE FINAL FIX
+   ========================= */
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header */
+.attendance-table thead {
+  background: linear-gradient(45deg, #6a5af9, #8f94fb);
+}
+
+.attendance-table th {
+  color: #ffffff;
+  padding: 14px;
+  text-align: left;
+}
+
+/* Body */
+.attendance-table td {
+  padding: 14px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* 🔥 ROW BACKGROUND FIX (MAIN ISSUE) */
+.attendance-table tbody tr {
+  background: transparent !important;
+}
+
+.attendance-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+
+.attendance-table tbody tr:hover {
+  background: rgba(102, 126, 234, 0.2) !important;
+}
+
+/* 🔥 COLUMN VISIBILITY FIX */
+.attendance-table td:nth-child(1) {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.attendance-table td:nth-child(2) {
+  color: #cfcfff !important;
+}
+
+.attendance-table td:nth-child(3),
+.attendance-table td:nth-child(4) {
+  color: #ffffff !important;
+}
+
+/* Status */
+.status-badge.present {
+  background: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.status-badge.absent {
+  background: #ff9800;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* Alerts */
+.alert {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.alert-success {
+  background: rgba(0, 255, 0, 0.1);
+  color: #4caf50;
+}
+
+.alert-error {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff6b6b;
+}
+
+/* Empty */
+.empty-state {
+  text-align: center;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .attendance-table {
+    font-size: 0.9em;
+  }
+}
